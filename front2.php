@@ -38,8 +38,13 @@ $_SESSION["name"]=$_GET["name"];
 echo "<h2> Welcome <br>".$_SESSION["name"]."</h2>";
 ?>
 </div>
-<div class="col-md-offset-1 col-md-4" style="border-left: 1px solid  #f4511e">
+<div class="col-md-4" style="border-left: 1px solid  #f4511e; padding-left:20px">
 	<h2 style="text-align:center">Test1</h1>
+	<?php
+		$em2=generateRandomString();
+		echo "<h3 style='text-align:center'>Input the given Name</h3>";
+		echo "<h3 style='text-align:center'>".$em2."</h3>";
+	?>
 	<article>
 		<form method="post" action="front2.php">  
 			<div class="form-group">
@@ -83,11 +88,10 @@ echo "<h2> Welcome <br>".$_SESSION["name"]."</h2>";
 				}
 			}
 		}
-		$em=generateRandomString();
-		$_SESSION["ran"]=$em;
 		
-		echo "<h3 style='text-align:center'>Input the given string</h3>";
-		echo "<h3 style='text-align:center'>".$em."</h3>";
+		$_SESSION["ran"]=$em2;
+		
+		
 		
 		
 
@@ -107,7 +111,7 @@ function generateRandomString($length = 5) {
 
 	</article>
 	<br><br><br>
-<form action="front3.php">
+<form action="front3.php" method="GET">
 		<button type="button" class="btn btn-primary btn-block">Test2</button>	
 	</form>	
 </div>
