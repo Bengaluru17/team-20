@@ -1,6 +1,7 @@
 package com.example.halfbloodprince.amoghhelperapp;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,7 +17,7 @@ public class FourthTrainingActivity extends AppCompatActivity implements DatePic
     EditText qDatePickerBtn4;
     TextView qResult4,qLabel4;
     Button qNextButton4;
-    int minYear=2001,yearMod=20, monthMod=12, dayMod=30;
+    int minYear=2001, yearMod=20, monthMod=12, dayMod=30;
     String displayDate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +45,7 @@ public class FourthTrainingActivity extends AppCompatActivity implements DatePic
         qNextButton4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(FourthTrainingActivity.this,FifthTrainingActivity.class));
             }
         });
     }

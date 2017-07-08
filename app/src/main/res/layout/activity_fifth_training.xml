@@ -19,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="9"
-        android:hint="@string/choose_date"
+        android:hint="@string/choose_time"
         android:inputType="time"
         android:textColorHint="@color/colorAccent"
         android:textSize="16sp"
