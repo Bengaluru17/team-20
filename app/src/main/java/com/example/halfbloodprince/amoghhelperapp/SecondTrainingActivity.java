@@ -43,6 +43,7 @@ public class SecondTrainingActivity extends AppCompatActivity
         qSpinner2 = (Spinner) findViewById(R.id.qSpinner2);
         qNextButton2 = (Button) findViewById(R.id.qNextButton2);
         scoreButton= (TextView) findViewById(R.id.scoreButton2);
+        Constants.increaseScore(10);
         scoreButton.setText("Score: "+Constants.getScore());
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,

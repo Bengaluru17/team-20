@@ -29,13 +29,12 @@ public class FifthTrainingActivity extends AppCompatActivity implements TimePick
     Button qNextButton5;
     EditText timePickerBtn;
     TextView qResult5, qLabel5,scoreButton5;
-    int hourMod=24, minuteMod=60;
+    int hourMod=13, minuteMod=60;
     String resultTime;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fifth_training);
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -45,7 +44,6 @@ public class FifthTrainingActivity extends AppCompatActivity implements TimePick
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
         qResult5 = (TextView) findViewById(R.id.qResult5);
         qLabel5 = (TextView) findViewById(R.id.qLabel5);
         timePickerBtn = (EditText) findViewById(R.id.timeChooserBtn);

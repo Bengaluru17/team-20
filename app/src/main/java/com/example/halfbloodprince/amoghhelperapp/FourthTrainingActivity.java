@@ -27,6 +27,7 @@ public class FourthTrainingActivity extends AppCompatActivity implements DatePic
     Button qNextButton4;
     int minYear=2001, yearMod=20, monthMod=12, dayMod=30;
     String displayDate;
+    int chosenYear, chosenMonth, chosenDay;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,10 +57,10 @@ public class FourthTrainingActivity extends AppCompatActivity implements DatePic
                 newFragment.show(getSupportFragmentManager(), "datePicker");
             }
         });
-        int chosenYear = minYear +rn.nextInt(yearMod+1);
-        int chosenMonth= 1+rn.nextInt(monthMod+1);
-        int chosenDay=1+rn.nextInt(dayMod+1);
-        if(chosenMonth==2){ chosenDay=1+rn.nextInt(29);}
+        chosenYear = minYear +rn.nextInt(yearMod+1);
+        chosenMonth= 1+rn.nextInt(monthMod);
+        chosenDay=1+rn.nextInt(dayMod);
+        if(chosenMonth==2){ chosenDay=1+rn.nextInt(28);}
         displayDate= ""+chosenDay+"/"+chosenMonth+"/"+chosenYear;
         qLabel4.setText("Choose the date: "+displayDate+ " (dd/mm/yyyy).");
         qNextButton4.setOnClickListener(new View.OnClickListener() {
@@ -85,11 +86,16 @@ public class FourthTrainingActivity extends AppCompatActivity implements DatePic
             qNextButton4.setEnabled(true);
             Constants.increaseScore(50);
         }
-        else{
+        else {
             qResult4.setVisibility(View.VISIBLE);
             qResult4.setTextColor(getResources().getColor(R.color.colorRed));
             qResult4.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_close_black_24dp,0,0,0);
-            qResult4.setText(R.string.incorrect_answer);
+            if(year!=chosenYear)
+                qResult4.setText("Incorrect year chosen!");
+            else if(month+1!=chosenMonth)
+                qResult4.setText("Incorrect month chosen!");
+            else
+                qResult4.setText("Incorrect date chosen");
             qNextButton4.setClickable(false);
             qNextButton4.setEnabled(false);
             Constants.decreaseScore(10);
