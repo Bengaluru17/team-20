@@ -17,7 +17,7 @@ public class ThirdTrainingActivity extends AppCompatActivity {
     RadioButton option1, option2, option3, option4;
     Button qNextButton3;
     String[][] questionArrays= {{"Japan","India","Australia", "Mexico"},
-            {"Train","Bicycle","Bus","Bicycle"},{"Ram", "Rohit","Shyam","Sumit"},{"Bulb","Ketley","Trimmer","Geyser"}};
+            {"Train","Car","Bus","Bicycle"},{"Ram", "Rohit","Shyam","Sumit"},{"Bulb","Ketley","Trimmer","Geyser"}};
     int number1,number2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

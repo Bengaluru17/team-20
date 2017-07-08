@@ -17,7 +17,6 @@ public class FourthTrainingActivity extends AppCompatActivity implements DatePic
     TextView qResult4,qLabel4;
     Button qNextButton4;
     int minYear=2001,yearMod=20, monthMod=12, dayMod=30;
-    int chosenYear, chosenMonth, chosenDay;
     String displayDate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
