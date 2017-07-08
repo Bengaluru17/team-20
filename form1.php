@@ -35,16 +35,14 @@
 		<input type="text" class="form-control" id="street" placeholder="Enter city" name="city"></br>	  
 	 </div>
 	
-	<div class="dropdown">
-		<button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Tutorials
-		<span class="caret"></span></button>
-		<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
-			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
-			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
-			<li role="presentation" class="divider"></li>
-			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
-		</ul>
+	<div class="form-group">
+		<label for="sel1">State:</label>
+		<select class="form-control" id="sel1" name="State">
+			<option value="rajasthan">Rajasthan</option>
+			<option value="uttar Pradesh">Uttar Pradesh</option>
+			<option value="karnataka">Karnataka</option>
+			<option value="tamil Nadu">Tamil Nadu</option>
+		</select>
 	</div>
   
 	<button type="submit" class="btn btn-default">Submit</button>
@@ -79,8 +77,9 @@ if(isset($_POST["name"]))
 	$street=$_POST["street"];
 	$locality=$_POST["locality"];
 	$city=$_POST["city"];
+	$state=$_POST["state"];
 
-	$sql="select name, email, number, gender, street, locality, city from forms where id=0";
+	$sql="select name, email, number, gender, street, locality, city, state from forms where id=0";
 	$result = mysqli_query($conn, $sql);
 	$row=mysqli_fetch_assoc($result);
 	
@@ -91,6 +90,7 @@ if(isset($_POST["name"]))
 	$st=$row["street"];
 	$lo=$row["locality"];
 	$ci=$row["city"];
+	$st=$row["state"];
 
 	echo "<h1 style='color:red; text-align:center'>STATUS</h1>";
 	echo "<table class='table table-striped'>";
@@ -215,6 +215,14 @@ if(isset($_POST["name"]))
 			echo "<tr><td>City</td><td style='color:Green'>Matched</td></tr>";
 		}
 	
+		if($st!=$state)
+		{
+			echo "<tr><td>State</td><td style='color:red'>Select right option</td></tr>";
+		}
+		else
+		{
+			echo "<tr><td>State</td><td style='color:Green'>Matched</td></tr>";
+		}
 	echo "</table>";
 }
 
