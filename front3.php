@@ -39,10 +39,19 @@ echo "<h2> Welcome <br>".$_SESSION["name"]."</h2>";
   </ul>
 </div>
 
+
 <div class="col-md-offset-1 col-md-4">
+<?php
+$arr=array("male", "female", "other");
+
+$random_keys=array_rand($arr,1);
+echo "<h2>Select right button</h2>";
+echo "<h3>".$arr[$random_keys]."</h3>";
+
+?>
 	<article>
     <h2 style="text-align:center;">Test 2</h2>
-		<form method="post" action=fron3.php>
+		<form method="post" action=front3.php>
   <input type="radio" name="gender" value="male" > Male<br>
   <input type="radio" name="gender" value="female"> Female<br>
   <input type="radio" name="gender" value="other"> Other <br> 
@@ -53,21 +62,33 @@ echo "<h2> Welcome <br>".$_SESSION["name"]."</h2>";
 <button type="button" class="btn btn-primary btn-block">Test 3</button>T
 </form>
 <?php
-$value1="male";
+
 if(isset($_POST["gender"])){
+	
   $value2=$_POST["gender"];
-if($value2!=$value1)
-{
-    echo "Please select the correct button";
+if($value2!=$_SESSION["rad"])
+{ 
+    $error= "<span style='color:red'>Please select the correct button</span>";
 }
 else{
-  echo "Correct button!";
+  $error= "<span style='color:green'>Correct button!</span>";
 }}
+
+$_SESSION["rad"]=$arr[$random_keys];
+
 
 
 ?>
 
 	</article>
+</div>
+<div class="col-md-3">
+	<h2 style="color:red; text-align:center">STATUS</h2>
+	<?php
+		if(isset($_POST["gender"]))
+		{	echo "<h3 style='text-align:center'>".$error."</h3>";	}
+	
+	?>
 </div>
 </body>
 </html>
