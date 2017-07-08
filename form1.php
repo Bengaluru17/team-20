@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<div class="container">
+<div style="margin-right:500px;margin-left:400px">
   <h2>Vertical (basic) form</h2>
   <form action="form1.php" method="POST">
     <div class="form-group">
@@ -44,6 +44,11 @@
 			<option value="tamil Nadu">Tamil Nadu</option>
 		</select>
 	</div>
+	
+	<div class="form-group">
+      <label for="date">Date:</label>
+      <input type="date" class="form-control" id="dat" name="date">
+    </div>
   
 	<button type="submit" class="btn btn-default">Submit</button>
 	
@@ -77,9 +82,11 @@ if(isset($_POST["name"]))
 	$street=$_POST["street"];
 	$locality=$_POST["locality"];
 	$city=$_POST["city"];
-	$state=$_POST["state"];
+	$state=$_POST["State"];
+	$dob=explode("-", $_POST["date"]);
+	
 
-	$sql="select name, email, number, gender, street, locality, city, state from forms where id=0";
+	$sql="select name, email, number, gender, street, locality, city, state, date from forms where id=0";
 	$result = mysqli_query($conn, $sql);
 	$row=mysqli_fetch_assoc($result);
 	
@@ -91,9 +98,10 @@ if(isset($_POST["name"]))
 	$lo=$row["locality"];
 	$ci=$row["city"];
 	$st=$row["state"];
-
+	$do=explode("-",$row["date"]);
+	
 	echo "<h1 style='color:red; text-align:center'>STATUS</h1>";
-	echo "<table class='table table-striped'>";
+	echo "<table class='table table-striped' style='float:right'>";
 
 		if($na!=$name)
 		{
@@ -214,7 +222,8 @@ if(isset($_POST["name"]))
 		{
 			echo "<tr><td>City</td><td style='color:Green'>Matched</td></tr>";
 		}
-	
+		echo $st;
+		
 		if($st!=$state)
 		{
 			echo "<tr><td>State</td><td style='color:red'>Select right option</td></tr>";
@@ -223,6 +232,24 @@ if(isset($_POST["name"]))
 		{
 			echo "<tr><td>State</td><td style='color:Green'>Matched</td></tr>";
 		}
+		
+		if($do[0]!=$dob[0])
+		{
+			echo "<tr><td>Date</td><td style='color:Blue'>Year is wrong</td></tr>";
+		}
+		else if($do[1]!=$dob[1])
+		{
+			echo "<tr><td>Date</td><td style='color:Blue'>Month is wrong</td></tr>";
+		}
+		else if($do[2]!=$dob[2])
+		{
+			echo "<tr><td>Date</td><td style='color:Blue'>Day is wrong</td></tr>";
+		}
+		else
+		{
+			echo "<tr><td>Date</td><td style='color:Green'>Matched</td></tr>";
+		}
+		
 	echo "</table>";
 }
 
