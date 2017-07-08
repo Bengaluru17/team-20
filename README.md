@@ -1,2 +1,2 @@
-Team 20: Working on Problem statement given by AMOGH !!
+Team 20: Working on Problem statement given by AMOGH !
 
