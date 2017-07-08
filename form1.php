@@ -25,15 +25,28 @@
       <input type="number" class="form-control" id="num" placeholder="Enter number" name="number">
     </div>
 	<div class="radio">Gender:&nbsp;&nbsp;&nbsp;&nbsp;
-	<label><input type="radio" name="gender" value="male">Male</label>&nbsp;&nbsp;&nbsp;&nbsp;
-	<label><input type="radio" name="gender" value="female">Female</label>
+		<label><input type="radio" name="gender" value="male">Male</label>&nbsp;&nbsp;&nbsp;&nbsp;
+		<label><input type="radio" name="gender" value="female">Female</label>
 	</div>
     <div class="form-group">
-      <label for="addr">Address:</label>
-      <input type="text" class="form-control" id="street" placeholder="Enter street" name="street"></br>
-      <input type="text" class="form-control" id="street" placeholder="Enter locality" name="locality"></br>
-      <input type="text" class="form-control" id="street" placeholder="Enter city" name="city"></br>	  
-	  </div>
+		<label for="addr">Address:</label>
+		<input type="text" class="form-control" id="street" placeholder="Enter street" name="street"></br>
+		<input type="text" class="form-control" id="street" placeholder="Enter locality" name="locality"></br>
+		<input type="text" class="form-control" id="street" placeholder="Enter city" name="city"></br>	  
+	 </div>
+	
+	<div class="dropdown">
+		<button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Tutorials
+		<span class="caret"></span></button>
+		<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
+			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
+			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
+			<li role="presentation" class="divider"></li>
+			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
+		</ul>
+	</div>
+  
 	<button type="submit" class="btn btn-default">Submit</button>
 	
   </form>
@@ -59,88 +72,150 @@ if (!$conn) {
 
 if(isset($_POST["name"]))
 {
-$name=$_POST["name"];
-$email=$_POST["email"];
-$number=$_POST["number"];
-$gender=$_POST["gender"];
-$street=$_POST["street"];
-$locality=$_POST["locality"];
-$city=$_POST["city"];
+	$name=$_POST["name"];
+	$email=$_POST["email"];
+	$number=$_POST["number"];
+	$gender=$_POST["gender"];
+	$street=$_POST["street"];
+	$locality=$_POST["locality"];
+	$city=$_POST["city"];
 
-$sql="select name, email, number, gender, street, locality, city from forms where id=0";
-$result = mysqli_query($conn, $sql);
-$row=mysqli_fetch_assoc($result);
-$na=$row["name"];
-$em=$row["email"];
-$nu=$row["number"];
-$gen=$row["gender"];
-$st=$row["street"];
-$lo=$row["locality"];
-$ci=$row["city"];
+	$sql="select name, email, number, gender, street, locality, city from forms where id=0";
+	$result = mysqli_query($conn, $sql);
+	$row=mysqli_fetch_assoc($result);
+	
+	$na=$row["name"];
+	$em=$row["email"];
+	$nu=$row["number"];
+	$gen=$row["gender"];
+	$st=$row["street"];
+	$lo=$row["locality"];
+	$ci=$row["city"];
 
-echo "<h1 style='color:red; text-align:center'>STATUS</h1>";
-echo "<table class='table table-striped'>";
+	echo "<h1 style='color:red; text-align:center'>STATUS</h1>";
+	echo "<table class='table table-striped'>";
 
-if($na!=$name)
-{
-	$na=strtolower($na);
-	$name=strtolower($name);
+		if($na!=$name)
+		{
+			$na=strtolower($na);
+			$name=strtolower($name);
 	
 	
-	if($na!=$name)
-	{
-		echo "<tr><td>Name</td><td style='color:Red'>Spelling mistake</td></tr>";
-	}
-	else
-	{
-		echo "<tr><td>Name</td><td style='color:blue'>Capslock mistake</td></tr>";
-	}
-}
-else
-{
-	echo "<tr><td>Name</td><td style='color:Green'>Matched</td></tr>";
-}
-if(strcmp($em, $email)==1)
-{
-	strtolower($em);
-	strtolower($email);
+			if($na!=$name)
+			{
+				echo "<tr><td>Name</td><td style='color:Red'>Spelling mistake</td></tr>";
+			}
+			else
+			{
+			echo "<tr><td>Name</td><td style='color:blue'>Capslock mistake</td></tr>";
+			}
+		}
+		else
+		{
+			echo "<tr><td>Name</td><td style='color:Green'>Matched</td></tr>";
+		}
+
+		if(strcmp($em, $email)==1)
+		{
+			strtolower($em);
+			strtolower($email);
 	
-	if(strcmp($em, $email)==1)
-	{
-		echo "<tr><td>Email</td><td style='color:red'>spelling mistake</td></tr>";
-	}
-	else
-	{
-		echo "<tr><td>Email</td><td style='color:blue'>Capslock mistake</td></tr>";
-	}
-}
-else{
-	echo "<tr><td>Email</td><td style='color:green'>Matched</td></tr>";
-}
+			if(strcmp($em, $email)==1)
+			{
+				echo "<tr><td>Email</td><td style='color:red'>spelling mistake</td></tr>";
+			}
+			else
+			{
+				echo "<tr><td>Email</td><td style='color:blue'>Capslock mistake</td></tr>";
+			}
+		}
 
-if($nu==$number)
-{
-	echo "<tr><td>Number</td><td style='color:green'>Matched</td></tr>";
-}
-else
-{
-	echo "<tr><td>Number</td><td style='color:red'>Unmatched</td></tr>";
+		else
+		{
+			echo "<tr><td>Email</td><td style='color:green'>Matched</td></tr>";
+		}
+
+		if($nu==$number)
+		{
+			echo "<tr><td>Number</td><td style='color:green'>Matched</td></tr>";
+		}
+		else
+		{
+			echo "<tr><td>Number</td><td style='color:red'>Unmatched</td></tr>";
 	
-}
+		}
 
 
-if($gen==$gender)
-{
-	echo "<tr><td>Gender</td><td style='color:green'>Matched</td></tr>";
-}
-else
-{
-	echo "<tr><td>Gender</td><td style='color:red'>Unmatched</td></tr>";
-}
+		if($gen==$gender)
+		{
+			echo "<tr><td>Gender</td><td style='color:green'>Matched</td></tr>";
+		}
+		else
+		{
+			echo "<tr><td>Gender</td><td style='color:red'>Unmatched</td></tr>";
+		}
 
+		if($st!=$street)
+		{
+			$st=strtolower($st);
+			$street=strtolower($street);
 	
-
-echo "</table>";
+	
+			if($st!=$street)
+			{
+				echo "<tr><td>Block</td><td style='color:Red'>Spelling mistake</td></tr>";
+			}
+			else
+			{
+			echo "<tr><td>Block</td><td style='color:blue'>Capslock mistake</td></tr>";
+			}
+		}
+		else
+		{
+			echo "<tr><td>Block</td><td style='color:Green'>Matched</td></tr>";
+		}
+		
+		if($lo!=$locality)
+		{
+			$lo=strtolower($lo);
+			$locality=strtolower($locality);
+	
+	
+			if($lo!=$locality)
+			{
+				echo "<tr><td>Locality</td><td style='color:Red'>Spelling mistake</td></tr>";
+			}
+			else
+			{
+			echo "<tr><td>Locality</td><td style='color:blue'>Capslock mistake</td></tr>";
+			}
+		}
+		else
+		{
+			echo "<tr><td>Locality</td><td style='color:Green'>Matched</td></tr>";
+		}
+		
+		if($ci!=$city)
+		{
+			$ci=strtolower($ci);
+			$city=strtolower($city);
+	
+	
+			if($ci!=$city)
+			{
+				echo "<tr><td>City</td><td style='color:Red'>Spelling mistake</td></tr>";
+			}
+			else
+			{
+			echo "<tr><td>City</td><td style='color:blue'>Capslock mistake</td></tr>";
+			}
+		}
+		else
+		{
+			echo "<tr><td>City</td><td style='color:Green'>Matched</td></tr>";
+		}
+	
+	echo "</table>";
 }
 
 
