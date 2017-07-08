@@ -62,22 +62,24 @@ $na=$row["name"];
 $em=$row["email"];
 $nu=$row["number"];
 
-echo "<table>";
-if(strcmp($na, $name)==1)
+
+echo "<table class='table table-striped'>";
+if($na!=$name)
 {
 	strtolower($na);
 	strtolower($name);
 	
-	if(strcmp($na, $name)==1)
+	if($na!=$name)
 	{
-		echo "<table><tr><td>Name</td><td style='color:Red'>Spelling mistake</td></tr></table>";
+		echo "<tr><td>Name</td><td style='color:Red'>Spelling mistake</td></tr>";
 	}
 	else
 	{
 		echo "<tr><td>Name</td><td style='color:yellow'>Capslock mistake</td></tr>";
 	}
 }
-else{
+else
+{
 	echo "<tr><td>Name</td><td style='color:Green'>Matched</td></tr>";
 }
 if(strcmp($em, $email)==1)
