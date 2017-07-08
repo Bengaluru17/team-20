@@ -21,7 +21,8 @@
         </activity>
         <activity android:name=".SecondTrainingActivity" />
         <activity android:name=".ThirdTrainingActivity" />
-        <activity android:name=".FourthTrainingActivity"></activity>
+        <activity android:name=".FourthTrainingActivity" />
+        <activity android:name=".FifthTrainingActivity"></activity>
     </application>
 
 </manifest>

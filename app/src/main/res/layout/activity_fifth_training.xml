@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.halfbloodprince.amoghhelperapp.FifthTrainingActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/qResult5"
+        android:drawablePadding="5dp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+    <EditText
+        android:id="@+id/timeChooserBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="9"
+        android:hint="@string/choose_date"
+        android:inputType="time"
+        android:textColorHint="@color/colorAccent"
+        android:textSize="16sp"
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:layout_above="@id/qResult5"
+        android:layout_marginBottom="20dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/qLabel5"
+        android:textSize="17sp"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="italic"
+        android:layout_above="@id/timeChooserBtn"
+        android:layout_marginBottom="20dp" />
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:text="@string/next"
+        android:id="@+id/qNextButton5"
+        android:clickable="false"
+        android:enabled="false"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="40dp" />
+</RelativeLayout>
