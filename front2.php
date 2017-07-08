@@ -33,9 +33,11 @@ nav {
 <div class="col-md-offset-1 col-md-3">
 <?php
 session_start();
-$_SESSION["name"]=$_GET["name"];
 
-echo "<h2> Welcome <br>".$_SESSION["name"]."</h2>";
+/*if(!isset($_GET["name"]))
+{$_SESSION["name"]=$_GET["name"];
+}*/
+echo "<h2> Welcome <br>Vaibhav Khandelwal</h2>";
 ?>
 </div>
 <div class="col-md-4" style="border-left: 1px solid  #f4511e; padding-left:20px">
@@ -111,9 +113,9 @@ function generateRandomString($length = 5) {
 
 	</article>
 	<br><br><br>
-<form action="front3.php" method="GET">
+<a href="front3.php">
 		<button type="button" class="btn btn-primary btn-block">Test2</button>	
-	</form>	
+	</a>	
 </div>
 <div class="col-md-3">
 	<h2 style="color:red; text-align:center">STATUS</h2>
