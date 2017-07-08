@@ -1,7 +1,6 @@
 package com.example.halfbloodprince.amoghhelperapp;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,8 +9,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
-
-import static java.security.AccessController.getContext;
 
 public class SecondTrainingActivity extends AppCompatActivity {
     Spinner qSpinner2;
@@ -40,6 +37,7 @@ public class SecondTrainingActivity extends AppCompatActivity {
                     qResult2.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_check_circle_black_24dp,0,0,0);
                     qResult2.setText(R.string.correct_answer);
                     qNextButton2.setClickable(true);
+                    qNextButton2.setEnabled(true);
                 }
                 else {
                     qResult2.setVisibility(View.VISIBLE);
@@ -47,6 +45,7 @@ public class SecondTrainingActivity extends AppCompatActivity {
                     qResult2.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_close_black_24dp,0,0,0);
                     qResult2.setText(R.string.incorrect_answer);
                     qNextButton2.setClickable(false);
+                    qNextButton2.setEnabled(false);
                 }
             }
 
@@ -57,7 +56,7 @@ public class SecondTrainingActivity extends AppCompatActivity {
         qNextButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SecondTrainingActivity.this,ThirdActivity.class));
+                startActivity(new Intent(SecondTrainingActivity.this,ThirdTrainingActivity.class));
             }
         });
     }

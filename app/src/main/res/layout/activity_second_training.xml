@@ -5,19 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.halfbloodprince.amoghhelperapp.SecondTrainingActivity">
-
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/qResult2"
         android:drawablePadding="5dp"
-        android:textColor="@color/colorGreen"
         android:textStyle="bold"
         android:visibility="invisible"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        />
+        android:layout_centerVertical="true" />
     <Spinner
         android:id="@+id/qSpinner2"
         android:layout_width="wrap_content"
@@ -46,6 +42,7 @@
         android:text="@string/next"
         android:id="@+id/qNextButton2"
         android:clickable="false"
+        android:enabled="false"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="40dp"
         />

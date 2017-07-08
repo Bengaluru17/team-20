@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SecondTrainingActivity" />
-        <activity android:name=".ThirdActivity"></activity>
+        <activity android:name=".ThirdTrainingActivity"></activity>
     </application>
 
 </manifest>
