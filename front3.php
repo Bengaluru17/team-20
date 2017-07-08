@@ -59,7 +59,7 @@ echo "<h3>".$arr[$random_keys]."</h3>";
   
 </form> 
 <form action=front4.php>
-<button type="button" class="btn btn-primary btn-block">Test 3</button>T
+<button type="button" class="btn btn-primary btn-block">Test 3</button>
 </form>
 <?php
 
