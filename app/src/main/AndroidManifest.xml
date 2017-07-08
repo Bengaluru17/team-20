@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".FirstTrainingActivity"
-            android:label="@string/app_name"
+            android:label="@string/buttons"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,12 +20,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".SecondTrainingActivity"
+            android:label="@string/drop_down_menus"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".ThirdTrainingActivity"
+            android:label="@string/check_boxes"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".FourthTrainingActivity"
+            android:label="@string/calendars"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".FifthTrainingActivity"
+            android:label="@string/time_pickers"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AmoghHelperApp</string>
+    <string name="app_name">Deeksha for Good</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
@@ -12,6 +12,11 @@
     <string name="next">next</string>
     <string name="incorrect_answer">Incorrect Answer!</string>
     <string name="choose_date">Choose date</string>
+    <string name="time_pickers">Activity 5: Time pickers</string>
+    <string name="calendars">Activity 4: Calendars</string>
+    <string name="check_boxes">Activity 3: Check boxes</string>
+    <string name="drop_down_menus">Activity 2: Drop-down menus</string>
+    <string name="buttons">Activity 1: Buttons</string>
     <string-array name="options_array">
         <item>Phone call</item>
         <item>Mail</item>
