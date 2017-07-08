@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+</head>
+<style>
+.jumbotron{
+    background-color: #f4511e; /* Orange */
+    color: #ffffff;
+}
+article {
+    margin-left: 350px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+nav {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+
+</style>
+<body>
+
+<a class="navbar-brand" > <img src="final_logo-02.png" left="100" width="250" height="150"> </a>
+
+<div class="jumbotron">
+    <h1 style="padding-left:250px; margin-left:200px">Tutorial Sessions</h1>      
+          
+</div>
+<div class="row" style=" margin-top:50px">
+	
+	<div class="col-md-offset-4 col-md-3 col-md-offset-6" style="border: 1px solid #f4511e; border-radius:10px">
+	<form style="padding:20px" action="front2.php" method="GET">
+	
+      <label for="name" style="text-align:center">Name:</label></br></br>
+      <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
+		</br></br>
+		<button type="submit" class="btn btn-primary btn-block">Start Training</button>
+	</div>
+	
+	
+	</form>
+	
+</div>
+</body>
+</html>
