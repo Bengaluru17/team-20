@@ -111,7 +111,14 @@ public class FirstTrainingActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.level1) {
-            // Handle the camera action
+        } else if(id==R.id.level2){
+            startActivity(new Intent(FirstTrainingActivity.this,SecondTrainingActivity.class));
+        } else if(id==R.id.level3){
+            startActivity(new Intent(FirstTrainingActivity.this,ThirdTrainingActivity.class));
+        } else if(id==R.id.level4){
+            startActivity(new Intent(FirstTrainingActivity.this,FourthTrainingActivity.class));
+        } else if(id==R.id.level5){
+            startActivity(new Intent(FirstTrainingActivity.this,FifthTrainingActivity.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

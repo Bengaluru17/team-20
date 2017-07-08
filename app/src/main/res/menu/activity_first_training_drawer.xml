@@ -18,6 +18,9 @@
             android:id="@+id/level4"
             android:icon="@drawable/ic_add_circle_black_24dp"
             android:title="Level 4" />
+       <item android:id="@+id/level5"
+           android:icon="@drawable/ic_add_circle_black_24dp"
+           android:title="Level 5"/>
     </group>
 
     <item android:title="Communicate">

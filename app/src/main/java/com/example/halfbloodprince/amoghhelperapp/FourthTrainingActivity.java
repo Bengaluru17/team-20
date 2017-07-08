@@ -2,9 +2,14 @@ package com.example.halfbloodprince.amoghhelperapp;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.DialogFragment;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -13,7 +18,8 @@ import android.widget.TextView;
 
 import java.util.Random;
 
-public class FourthTrainingActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
+public class FourthTrainingActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener
+    ,NavigationView.OnNavigationItemSelectedListener{
     EditText qDatePickerBtn4;
     TextView qResult4,qLabel4;
     Button qNextButton4;
@@ -73,4 +79,59 @@ public class FourthTrainingActivity extends AppCompatActivity implements DatePic
             qNextButton4.setEnabled(false);
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.first_training, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+
+        if (id == R.id.level1) {
+            startActivity(new Intent(FourthTrainingActivity.this,FirstTrainingActivity.class));
+        } else if(id==R.id.level2){
+            startActivity(new Intent(FourthTrainingActivity.this,SecondTrainingActivity.class));
+        } else if(id==R.id.level3){
+            startActivity(new Intent(FourthTrainingActivity.this,ThirdTrainingActivity.class));
+        } else if(id==R.id.level4){
+        } else if(id==R.id.level5){
+            startActivity(new Intent(FourthTrainingActivity.this,FifthTrainingActivity.class));
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
 }

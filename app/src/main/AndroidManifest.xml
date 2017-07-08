@@ -19,10 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SecondTrainingActivity" />
-        <activity android:name=".ThirdTrainingActivity" />
-        <activity android:name=".FourthTrainingActivity" />
-        <activity android:name=".FifthTrainingActivity"></activity>
+        <activity android:name=".SecondTrainingActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ThirdTrainingActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".FourthTrainingActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".FifthTrainingActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>
