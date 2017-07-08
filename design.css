@@ -1,0 +1,29 @@
+@charset "utf-8";
+	.NormalCharacterStyle3
+{
+	font-family : Myriad Pro;
+	font-size : 39px;
+	color : #FFFFFF;
+	color : rgb(255, 255, 255);
+}
+.NormalCharacterStyle2
+{
+	font-family : Myriad Pro;
+	font-size : 39px;
+	color : #FFFFFF;
+	color : rgb(255, 255, 255);
+}
+.NormalCharacterStyle1
+{
+	font-family : Myriad Pro;
+	font-size : 39px;
+	color : #FFFFFF;
+	color : rgb(255, 255, 255);
+}
+.NormalCharacterStyle
+{
+	font-family : Myriad Pro;
+	font-size : 61px;
+	color : #000000;
+	color : rgb(0, 0, 0);
+}
