@@ -58,5 +58,7 @@ echo $_SESSION["ran"];
 </html>
 
 
-
+<-- 
+	comment :page checked
+>
 
