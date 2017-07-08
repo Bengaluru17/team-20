@@ -38,59 +38,87 @@ $_SESSION["name"]=$_GET["name"];
 echo "<h2> Welcome <br>".$_SESSION["name"]."</h2>";
 ?>
 </div>
-<div class="col-md-4">
+<div class="col-md-offset-1 col-md-4" style="border-left: 1px solid  #f4511e">
+	<h2 style="text-align:center">Test1</h1>
 	<article>
 		<form method="post" action="front2.php">  
 			<div class="form-group">
 				<label for="na">Name:</label>
-				<input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
+				<input type="text" class="form-control" id="name" placeholder="Enter name" name="email"><br><br>
+				<input type="submit">
 			</div>
 		</form>
 		
 		<?php
-			$email=["ah","sd","sdg","sdd","kj","iurey","kjh","jhs","kuwe","wkh"];
 		
 		
-		if(isset($_POST["email[i]"]))
-		{
-				$em=$_SESSION["ran"];
-  
-				if($_POST["email[i]"]=="")
+		if(isset($_POST["email"]))
+		{		
+			$em=$_SESSION["ran"];
+				if($_POST["email"]=="")
 				{
 					echo "fill";  
 				}
 			else
 			{
-				$email=$_POST["email[i]"];
-				echo $email;
+				$email=$_POST["email"];
 
-				if(strcmp($em, $email[i])==1)
+				if($em!=$email)
 				{
-					strtolower($em);
-					strtolower($email);
+					$em=strtolower($em);
+					$email=strtolower($email);
 	
-					if(strcmp($em, $email[i])==1)
+					if($em!=$email)
 					{
-						echo "<span style='color:green'>spelling mistake</span>";
+						$error="<span style='color:red'>spelling mistake</span>";
 					}
 					else
 					{
-						echo "capslock mistake";
+						$error= "<span style='color:blue'>Capslock mistake</span>";
 					}
 				}
 				else
 				{
-						echo "<span style='color:red'>matched</span>";
+						$error= "<span style='color:green'>matched</span>";
 				}
 			}
-		}	
+		}
+		$em=generateRandomString();
+		$_SESSION["ran"]=$em;
+		
+		echo "<h3 style='text-align:center'>Input the given string</h3>";
+		echo "<h3 style='text-align:center'>".$em."</h3>";
+		
+		
 
-$_SESSION["ran"]=random();
-echo $_SESSION["ran"];
+function generateRandomString($length = 5) {
+    $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+}		
+
 
 ?>
 
+
 	</article>
+	<br><br><br>
+<form action="front3.php">
+		<button type="button" class="btn btn-primary btn-block">Test2</button>	
+	</form>	
+</div>
+<div class="col-md-3">
+	<h2 style="color:red; text-align:center">STATUS</h2>
+	<?php
+		if(isset($_POST["email"]))
+		{	echo "<h3 style='text-align:center'>".$error."</h3>";	}
+	
+	?>
+	
 </div>
 </body>
 </html>
