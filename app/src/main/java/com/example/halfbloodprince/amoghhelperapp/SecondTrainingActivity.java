@@ -1,10 +1,7 @@
 package com.example.halfbloodprince.amoghhelperapp;
 
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -25,6 +22,7 @@ public class SecondTrainingActivity extends AppCompatActivity
     Spinner qSpinner2;
     TextView qResult2;
     Button qNextButton2;
+    TextView scoreButton;
     String options[]={"Phone call","Mail","Message","Skype"};
 
     @Override
@@ -44,6 +42,8 @@ public class SecondTrainingActivity extends AppCompatActivity
         qResult2 = (TextView)  findViewById(R.id.qResult2);
         qSpinner2 = (Spinner) findViewById(R.id.qSpinner2);
         qNextButton2 = (Button) findViewById(R.id.qNextButton2);
+        scoreButton= (TextView) findViewById(R.id.scoreButton2);
+        scoreButton.setText("Score: "+Constants.getScore());
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.options_array, android.R.layout.simple_spinner_item);
@@ -59,6 +59,7 @@ public class SecondTrainingActivity extends AppCompatActivity
                     qResult2.setText(R.string.correct_answer);
                     qNextButton2.setClickable(true);
                     qNextButton2.setEnabled(true);
+                    Constants.increaseScore(50);
                 }
                 else {
                     qResult2.setVisibility(View.VISIBLE);
@@ -67,7 +68,9 @@ public class SecondTrainingActivity extends AppCompatActivity
                     qResult2.setText(R.string.incorrect_answer);
                     qNextButton2.setClickable(false);
                     qNextButton2.setEnabled(false);
+                    Constants.decreaseScore(10);
                 }
+                scoreButton.setText("Score: "+Constants.getScore());
             }
 
             @Override
@@ -107,7 +110,7 @@ public class SecondTrainingActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_score) {
             return true;
         }
 

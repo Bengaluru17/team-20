@@ -23,7 +23,7 @@ import java.util.Random;
 public class FourthTrainingActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener
     ,NavigationView.OnNavigationItemSelectedListener{
     EditText qDatePickerBtn4;
-    TextView qResult4,qLabel4;
+    TextView qResult4,qLabel4,scoreButton4;
     Button qNextButton4;
     int minYear=2001, yearMod=20, monthMod=12, dayMod=30;
     String displayDate;
@@ -46,8 +46,9 @@ public class FourthTrainingActivity extends AppCompatActivity implements DatePic
         qResult4 = (TextView)  findViewById(R.id.qResult4);
         qLabel4 = (TextView)  findViewById(R.id.qLabel4);
         qNextButton4 = (Button) findViewById(R.id.qNextButton4);
+        scoreButton4 = (TextView) findViewById(R.id.scoreButton4);
         Random rn= new Random();
-
+        scoreButton4.setText("Score: "+Constants.getScore());
         qDatePickerBtn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,6 +83,7 @@ public class FourthTrainingActivity extends AppCompatActivity implements DatePic
             qResult4.setText(R.string.correct_answer);
             qNextButton4.setClickable(true);
             qNextButton4.setEnabled(true);
+            Constants.increaseScore(50);
         }
         else{
             qResult4.setVisibility(View.VISIBLE);
@@ -90,7 +92,9 @@ public class FourthTrainingActivity extends AppCompatActivity implements DatePic
             qResult4.setText(R.string.incorrect_answer);
             qNextButton4.setClickable(false);
             qNextButton4.setEnabled(false);
+            Constants.decreaseScore(10);
         }
+        scoreButton4.setText("Score: "+Constants.getScore());
     }
 
     @Override
@@ -118,7 +122,7 @@ public class FourthTrainingActivity extends AppCompatActivity implements DatePic
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_score) {
             return true;
         }
 

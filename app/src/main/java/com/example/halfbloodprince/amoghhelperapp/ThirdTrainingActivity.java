@@ -21,7 +21,7 @@ import java.util.Random;
 public class ThirdTrainingActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{
     RadioGroup rGroup1;
-    TextView qLabel3,qResult3;
+    TextView qLabel3,qResult3,scoreButton3;
     RadioButton option1, option2, option3, option4;
     Button qNextButton3;
     String[][] questionArrays= {{"Japan","India","Australia", "Mexico"},
@@ -55,7 +55,8 @@ public class ThirdTrainingActivity extends AppCompatActivity
         option2 = (RadioButton) findViewById(R.id.radioOption2);
         option3 = (RadioButton) findViewById(R.id.radioOption3);
         option4 = (RadioButton) findViewById(R.id.radioOption4);
-
+        scoreButton3= (TextView) findViewById(R.id.scoreButton3);
+        scoreButton3.setText("Score: "+Constants.getScore());
         qLabel3.setText("Select option '"+questionArrays[number1][number2]+"' from the options.");
         option1.setText(questionArrays[number1][0]);
         option2.setText(questionArrays[number1][1]);
@@ -89,6 +90,7 @@ public class ThirdTrainingActivity extends AppCompatActivity
                     qResult3.setText(R.string.correct_answer);
                     qNextButton3.setClickable(true);
                     qNextButton3.setEnabled(true);
+                    Constants.increaseScore(50);
                 }
                 else{
                     qResult3.setVisibility(View.VISIBLE);
@@ -97,7 +99,9 @@ public class ThirdTrainingActivity extends AppCompatActivity
                     qResult3.setText(R.string.incorrect_answer);
                     qNextButton3.setClickable(false);
                     qNextButton3.setEnabled(false);
+                    Constants.decreaseScore(10);
                 }
+                scoreButton3.setText("Score: "+Constants.getScore());
             }
         });
         qNextButton3.setOnClickListener(new View.OnClickListener() {
@@ -132,7 +136,7 @@ public class ThirdTrainingActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_score) {
             return true;
         }
 

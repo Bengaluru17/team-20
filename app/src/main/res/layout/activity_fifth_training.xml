@@ -70,12 +70,23 @@
         android:layout_width="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:text="@string/next"
+        android:text="SUBMIT"
         android:id="@+id/qNextButton5"
         android:clickable="false"
         android:enabled="false"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="40dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="60dp"
+        android:layout_marginTop="60dp"
+        android:text="Score: --"
+        android:id="@+id/scoreButton5"
+        />
 </RelativeLayout>
     </android.support.design.widget.CoordinatorLayout>
 <android.support.design.widget.NavigationView

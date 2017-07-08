@@ -1,5 +1,6 @@
 package com.example.halfbloodprince.amoghhelperapp;
 
+import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -20,6 +21,7 @@ import android.widget.Toast;
 public class FirstTrainingActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     Button okButton1;
+    TextView scoreButton;
     TextView qResult1,qLabel1;
     private static int count=0;
 
@@ -29,9 +31,12 @@ public class FirstTrainingActivity extends AppCompatActivity
         setContentView(R.layout.activity_first_training);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        Constants.setScore(0);
         okButton1 = (Button) findViewById(R.id.qOKButton1);
         qResult1 = (TextView) findViewById(R.id.qResult1);
         qLabel1 = (TextView) findViewById(R.id.qLabel1);
+        scoreButton= (TextView) findViewById(R.id.scoreButton);
+        scoreButton.setText("Score: "+Constants.getScore());
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -57,6 +62,8 @@ public class FirstTrainingActivity extends AppCompatActivity
                 increaseCount();
                 if(count>=3){
                     qResult1.setVisibility(View.VISIBLE);
+                    Constants.increaseScore(50);
+                    scoreButton.setText("Score: "+Constants.getScore());
                     startActivity(new Intent(FirstTrainingActivity.this,SecondTrainingActivity.class));
 
                 }
@@ -94,10 +101,12 @@ public class FirstTrainingActivity extends AppCompatActivity
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_score) {
+
             return true;
         }
 

@@ -17,6 +17,7 @@
     <string name="check_boxes">Activity 3: Check boxes</string>
     <string name="drop_down_menus">Activity 2: Drop-down menus</string>
     <string name="buttons">Activity 1: Buttons</string>
+    <string name="score">Score:</string>
     <string-array name="options_array">
         <item>Phone call</item>
         <item>Mail</item>

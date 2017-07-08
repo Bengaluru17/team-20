@@ -2,6 +2,7 @@ package com.example.halfbloodprince.amoghhelperapp;
 
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.support.annotation.RestrictTo;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.view.GravityCompat;
@@ -17,6 +18,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.util.Random;
 
@@ -24,7 +28,7 @@ public class FifthTrainingActivity extends AppCompatActivity implements TimePick
     NavigationView.OnNavigationItemSelectedListener{
     Button qNextButton5;
     EditText timePickerBtn;
-    TextView qResult5, qLabel5;
+    TextView qResult5, qLabel5,scoreButton5;
     int hourMod=24, minuteMod=60;
     String resultTime;
     @Override
@@ -45,6 +49,8 @@ public class FifthTrainingActivity extends AppCompatActivity implements TimePick
         qResult5 = (TextView) findViewById(R.id.qResult5);
         qLabel5 = (TextView) findViewById(R.id.qLabel5);
         timePickerBtn = (EditText) findViewById(R.id.timeChooserBtn);
+        scoreButton5 = (TextView) findViewById(R.id.scoreButton5);
+        scoreButton5.setText("Score: "+Constants.getScore());
         Random rn= new Random();
         int chosenHours =rn.nextInt(hourMod);
         int chosenMinutes=rn.nextInt(minuteMod);
@@ -62,7 +68,8 @@ public class FifthTrainingActivity extends AppCompatActivity implements TimePick
         qNextButton5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Toast.makeText(FifthTrainingActivity.this, "You have finished the test. Congratulations!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(FifthTrainingActivity.this, "Final Score: "+Constants.getScore(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -78,6 +85,7 @@ public class FifthTrainingActivity extends AppCompatActivity implements TimePick
             qResult5.setText(R.string.correct_answer);
             qNextButton5.setClickable(true);
             qNextButton5.setEnabled(true);
+            Constants.increaseScore(50);
         }
         else{
             qResult5.setVisibility(View.VISIBLE);
@@ -86,7 +94,9 @@ public class FifthTrainingActivity extends AppCompatActivity implements TimePick
             qResult5.setText(R.string.incorrect_answer);
             qNextButton5.setClickable(false);
             qNextButton5.setEnabled(false);
+            Constants.decreaseScore(10);
         }
+        scoreButton5.setText("Score: "+Constants.getScore());
     }
     @Override
     public void onBackPressed() {
@@ -113,7 +123,7 @@ public class FifthTrainingActivity extends AppCompatActivity implements TimePick
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_score) {
             return true;
         }
 
