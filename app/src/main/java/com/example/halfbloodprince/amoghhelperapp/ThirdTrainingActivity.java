@@ -1,5 +1,6 @@
 package com.example.halfbloodprince.amoghhelperapp;
 
+import android.content.Intent;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -83,7 +84,7 @@ public class ThirdTrainingActivity extends AppCompatActivity {
         qNextButton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(ThirdTrainingActivity.this, FourthTrainingActivity.class));
             }
         });
     }
