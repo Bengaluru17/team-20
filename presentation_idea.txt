@@ -1,0 +1,14 @@
+Problem Statement:
+To create a training platform for differently abled user.
+
+Tech Stack:
+1) Php
+2) HTML
+3) JavaScript
+4) Andriod Studio
+5) Adobe Illustrator
+
+Scalibility:
+
+USP:
+Easy to Use minimilistic design
