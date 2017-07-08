@@ -24,10 +24,18 @@
       <label for="num">Number:</label>
       <input type="number" class="form-control" id="num" placeholder="Enter number" name="number">
     </div>
-    <div class="checkbox">
-      <label><input type="checkbox" name="remember"> Remember me</label>
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
+	<div class="radio">Gender:&nbsp;&nbsp;&nbsp;&nbsp;
+	<label><input type="radio" name="gender" value="male">Male</label>&nbsp;&nbsp;&nbsp;&nbsp;
+	<label><input type="radio" name="gender" value="female">Female</label>
+	</div>
+    <div class="form-group">
+      <label for="addr">Address:</label>
+      <input type="text" class="form-control" id="street" placeholder="Enter number" name="street">
+      <input type="text" class="form-control" id="street" placeholder="Enter number" name="locality">
+      <input type="text" class="form-control" id="street" placeholder="Enter number" name="city">	  
+	  </div>
+	<button type="submit" class="btn btn-default">Submit</button>
+	
   </form>
 </div>
 
@@ -54,20 +62,29 @@ if(isset($_POST["name"]))
 $name=$_POST["name"];
 $email=$_POST["email"];
 $number=$_POST["number"];
+$gender=$_POST["gender"];
+$street=$_POST["street"];
+$locality=$_POST["locality"];
+$city=$_POST["city"];
 
-$sql="select name, email, number from forms where id=0";
+$sql="select name, email, number, gender, street, locality, city from forms where id=0";
 $result = mysqli_query($conn, $sql);
 $row=mysqli_fetch_assoc($result);
 $na=$row["name"];
 $em=$row["email"];
 $nu=$row["number"];
+$gen=$row["gender"];
+$st=$row["street"];
+$lo=$row["locality"];
+$ci=$row["city"];
 
-
+echo "<h1 style='color:red; text-align:center'>STATUS</h1>";
 echo "<table class='table table-striped'>";
 if($na!=$name)
 {
-	strtolower($na);
-	strtolower($name);
+	$na=strtolower($na);
+	$name=strtolower($name);
+	
 	
 	if($na!=$name)
 	{
@@ -75,7 +92,7 @@ if($na!=$name)
 	}
 	else
 	{
-		echo "<tr><td>Name</td><td style='color:yellow'>Capslock mistake</td></tr>";
+		echo "<tr><td>Name</td><td style='color:blue'>Capslock mistake</td></tr>";
 	}
 }
 else
@@ -93,7 +110,7 @@ if(strcmp($em, $email)==1)
 	}
 	else
 	{
-		echo "<tr><td>Email</td><td style='color:yellow'>Capslock mistake</td></tr>";
+		echo "<tr><td>Email</td><td style='color:blue'>Capslock mistake</td></tr>";
 	}
 }
 else{
@@ -108,6 +125,16 @@ else
 {
 	echo "<tr><td>Number</td><td style='color:red'>Unmatched</td></tr>";
 	
+}
+
+
+if($gen==$gender)
+{
+	echo "<tr><td>Gender</td><td style='color:green'>Matched</td></tr>";
+}
+else
+{
+	echo "<tr><td>Gender</td><td style='color:red'>Unmatched</td></tr>";
 }
 echo "</table>";
 }
