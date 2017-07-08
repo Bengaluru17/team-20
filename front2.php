@@ -41,11 +41,11 @@ echo "<h2> Welcome <br>Vaibhav Khandelwal</h2>";
 ?>
 </div>
 <div class="col-md-4" style="border-left: 1px solid  #f4511e; padding-left:20px">
-	<h2 style="text-align:center">Test1</h1>
+	<h2 style="text-align:center">Level 1</h1>
 	<?php
 		$em2=generateRandomString();
 		echo "<h3 style='text-align:center'>Input the given Name</h3>";
-		echo "<h3 style='text-align:center'>".$em2."</h3>";
+		echo "<h3 style='text-align:center;color:red'>".$em2."</h3>";
 	?>
 	<article>
 		<form method="post" action="front2.php">  
@@ -114,7 +114,7 @@ function generateRandomString($length = 5) {
 	</article>
 	<br><br><br>
 <a href="front3.php">
-		<button type="button" class="btn btn-primary btn-block">Test2</button>	
+		<button type="button" class="btn btn-primary btn-block">Level 2</button>	
 	</a>	
 </div>
 <div class="col-md-3">
