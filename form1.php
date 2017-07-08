@@ -30,9 +30,9 @@
 	</div>
     <div class="form-group">
       <label for="addr">Address:</label>
-      <input type="text" class="form-control" id="street" placeholder="Enter number" name="street">
-      <input type="text" class="form-control" id="street" placeholder="Enter number" name="locality">
-      <input type="text" class="form-control" id="street" placeholder="Enter number" name="city">	  
+      <input type="text" class="form-control" id="street" placeholder="Enter street" name="street"></br>
+      <input type="text" class="form-control" id="street" placeholder="Enter locality" name="locality"></br>
+      <input type="text" class="form-control" id="street" placeholder="Enter city" name="city"></br>	  
 	  </div>
 	<button type="submit" class="btn btn-default">Submit</button>
 	
@@ -80,6 +80,7 @@ $ci=$row["city"];
 
 echo "<h1 style='color:red; text-align:center'>STATUS</h1>";
 echo "<table class='table table-striped'>";
+
 if($na!=$name)
 {
 	$na=strtolower($na);
@@ -136,6 +137,9 @@ else
 {
 	echo "<tr><td>Gender</td><td style='color:red'>Unmatched</td></tr>";
 }
+
+	
+
 echo "</table>";
 }
 
