@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-
 import java.util.Random;
 
 public class ThirdTrainingActivity extends AppCompatActivity {
@@ -26,7 +25,6 @@ public class ThirdTrainingActivity extends AppCompatActivity {
         Random rn= new Random();
         int n = questionArrays.length ;
         number1 = rn.nextInt(n);
-
         number2= rn.nextInt(n);
 
         rGroup1= (RadioGroup) findViewById(R.id.radioButtonGroup);
@@ -38,7 +36,7 @@ public class ThirdTrainingActivity extends AppCompatActivity {
         option3 = (RadioButton) findViewById(R.id.radioOption3);
         option4 = (RadioButton) findViewById(R.id.radioOption4);
 
-        qLabel3.setText("Select option '"+questionArrays[number1][number2]+"' from the options");
+        qLabel3.setText("Select option '"+questionArrays[number1][number2]+"' from the options.");
         option1.setText(questionArrays[number1][0]);
         option2.setText(questionArrays[number1][1]);
         option3.setText(questionArrays[number1][2]);

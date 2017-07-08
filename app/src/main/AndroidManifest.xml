@@ -20,7 +20,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".SecondTrainingActivity" />
-        <activity android:name=".ThirdTrainingActivity"></activity>
+        <activity android:name=".ThirdTrainingActivity" />
+        <activity android:name=".FourthTrainingActivity"></activity>
     </application>
 
 </manifest>

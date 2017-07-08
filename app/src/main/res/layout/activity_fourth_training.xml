@@ -4,36 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.halfbloodprince.amoghhelperapp.SecondTrainingActivity">
+    tools:context="com.example.halfbloodprince.amoghhelperapp.FourthTrainingActivity">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/qResult2"
+        android:id="@+id/qResult4"
         android:drawablePadding="5dp"
         android:textStyle="bold"
         android:visibility="invisible"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true" />
-
-    <Spinner
-        android:id="@+id/qSpinner2"
+    <EditText
+        android:id="@+id/dateChooserBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:ems="9"
+        android:hint="@string/choose_date"
+        android:inputType="date"
+        android:textColorHint="@color/colorAccent"
+        android:textSize="16sp"
         android:layout_centerHorizontal="true"
-        android:dropDownWidth="wrap_content"
-        android:prompt="@string/spinner_prompt"
-        android:layout_above="@id/qResult2"
+        android:clickable="true"
+        android:layout_above="@id/qResult4"
         android:layout_marginBottom="20dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/question2"
         android:layout_centerHorizontal="true"
-        android:id="@+id/qLabel2"
+        android:id="@+id/qLabel4"
         android:textSize="17sp"
         android:textColor="@color/colorPrimary"
         android:textStyle="italic"
-        android:layout_above="@id/qSpinner2"
+        android:layout_above="@id/dateChooserBtn"
         android:layout_marginBottom="20dp" />
     <Button
         android:layout_height="wrap_content"
@@ -41,12 +43,9 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:text="@string/next"
-        android:id="@+id/qNextButton2"
+        android:id="@+id/qNextButton4"
         android:clickable="false"
         android:enabled="false"
         android:layout_marginRight="40dp"
-        android:layout_marginBottom="40dp"
-        />
-
-
+        android:layout_marginBottom="40dp" />
 </RelativeLayout>

@@ -10,6 +10,7 @@
     <string name="correct_answer">Correct Answer!</string>
     <string name="next">next</string>
     <string name="incorrect_answer">Incorrect Answer!</string>
+    <string name="choose_date">Choose date</string>
     <string-array name="options_array">
         <item>Phone call</item>
         <item>Mail</item>
