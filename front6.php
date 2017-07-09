@@ -30,7 +30,27 @@ nav {
           
 </div>
 <div class="row">
-<div class="col-md-offset-1 col-md-3">
+<div  class="col-md-3" style="text-align:center">
+<?php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database="cfg";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password,$database);
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+	}
+
+$t=time();
+$sql="UPDATE levels SET level5=$t WHERE id=1";
+mysqli_query($conn, $sql);
+
+?>
 <?php
 session_start();
 
@@ -40,7 +60,7 @@ session_start();
 echo "<h2> Welcome <br>Vaibhav Khandelwal</h2>";
 ?>
 </div>
-<div class="col-md-4" style="border-left: 1px solid  #f4511e; padding-left:20px">
+<div class="col-md-6" style="border-left: 1px solid  #f4511e;border-right: 1px solid  #f4511e; padding-left:20px">
 	<form action="front6.php" method="post" enctype="multipart/form-data">
     <h2>Select <span style="color:red">image.jpg</span> to upload</h2><br><br>
     <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
@@ -66,9 +86,7 @@ if(isset($_POST["submit"]))
 }
 ?>
 
-<a href="front6.php">
-<button type="button" class="btn btn-primary btn-block">Training form</button>
-</a>
+
 
 </div>
 <div class="col-md-3">
@@ -77,14 +95,21 @@ if(isset($_POST["submit"]))
 	if(isset($_POST["submit"])) {	
 		if($name==$_FILES["fileToUpload"]["name"])
 		{
-			echo "<span style='color:green;text-align:center'><h3>Matched</h3></span>";
+			echo "<span style='color:green;text-align:center'><h3>Matched</h3></span>";$value=1;
 		}
 		else
 		{
-			echo "<span style='color:red;text-align:center'><h3>Wrong file</h3></span>";
+			echo "<span style='color:red;text-align:center'><h3>Wrong file</h3></span>";$value=0;
 	
 		}
 	}
+	if(isset($_POST["submit"])&&$value==1)
+		{
+			echo "<br><h2>SUCCESSFUL !</h2>";
+			echo "<a href='form1.php'
+			<button type='button' class='btn btn-primary btn-block'>Training form</button>
+			</a>";
+		}	
 	?>
 
 </div>
