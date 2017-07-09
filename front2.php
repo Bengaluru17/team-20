@@ -31,7 +31,7 @@ nav {
           
 </div>
 <div class="row">
-<div class="col-md-offset-1 col-md-3">
+<div class="col-md-3" style="text-align:center">
 <?php
 
 $servername = "localhost";
@@ -61,18 +61,29 @@ session_start();
 
 echo "<h2> Welcome <br>Vaibhav Khandelwal</h2>";
 ?>
+<br><br>
+<iframe width="300" height="300" src="https://www.youtube.com/embed/Qt7SUrZ_gms?ecver=1" frameborder="0" allowfullscreen></iframe>
 </div>
-<div class="col-md-4" style="border-left: 1px solid  #f4511e; padding-left:20px">
+<div class="col-md-6" style="border-left: 1px solid  #f4511e;border-right: 1px solid  #f4511e; padding-left:20px">
 	<h2 style="text-align:center">Level 1</h1>
 	
+	<?php
+if(isset($_POST["email1"])&&$value>=2)
+{
+	echo "<a href='front4.php'
+<button type='button' class='btn btn-primary btn-block'>Level 3</button>
+</a>";
+}
+
+?>
 	<article>
 		<form method="post" action="front2.php">  
 			
 			<div class="form-group">
 				<?php
 				$e1=generateRandomString();
-				echo "<h3 style='text-align:center'>Q1. Input the given Name</h3>";
-				echo "<h3 style='text-align:center;color:red'>".$e1."</h3>";
+				echo "<h4 style='text-align:center'>Q1. Input the given Name</h2>";
+				echo "<h2 style='text-align:center;background-color:#f4511e;color:white;margin-right:150px;margin-left:150px'>".$e1."</h2>";
 				?>
 				<label for="na">Name:</label>
 				<input type="text" class="form-control" id="name" placeholder="Enter name" name="email1"><br><br>
@@ -82,8 +93,8 @@ echo "<h2> Welcome <br>Vaibhav Khandelwal</h2>";
 			<div class="form-group">
 				<?php
 				$e2=generateRandomString();
-				echo "<h3 style='text-align:center'>Q2. Input the given Name</h3>";
-				echo "<h3 style='text-align:center;color:red'>".$e2."</h3>";
+				echo "<h4 style='text-align:center'>Q2. Input the given Name</h4>";
+				echo "<h2 style='text-align:center;background-color:#f4511e;color:white;margin-right:150px;margin-left:150px'>".$e2."</h2>";
 				?>
 				<label for="na">Name:</label>
 				<input type="text" class="form-control" id="name" placeholder="Enter name" name="email2"><br><br>
@@ -93,15 +104,15 @@ echo "<h2> Welcome <br>Vaibhav Khandelwal</h2>";
 			<div class="form-group">
 				<?php
 				$e3=generateRandomString();
-				echo "<h3 style='text-align:center'>Q3. Input the given Name</h3>";
-				echo "<h3 style='text-align:center;color:red'>".$e3."</h3>";
+				echo "<h4 style='text-align:center'>Q3. Input the given Name</h4>";
+				echo "<h2 style='text-align:center;background-color:#f4511e;color:white;margin-right:150px;margin-left:150px'>".$e3."</h2>";
 				?>
 				<label for="na">Name:</label>
 				<input type="text" class="form-control" id="name" placeholder="Enter name" name="email3"><br><br>
 				
 			</div>
 			
-			<input type="submit">
+			<button type="submit" class='btn btn-primary btn-block' >Submit</button>
 		</form>
 		
 		<?php
@@ -232,16 +243,11 @@ function generateRandomString($length = 5) {
 
 
 	</article>
-	<br><br><br>
-<?php
-if($value>2)
-{	echo "<a href='front3.php'>
-		<button type='button' class='btn btn-primary btn-block'>Level 2</button>	
-	</a>";	
-}
-?>
+	<br><br>
+
+
 </div>
-<div class="col-md-3">
+<div class="col-md-3" >
 	<h2 style="color:red; text-align:center">STATUS</h2>
 	<?php
 		if(isset($_POST["email1"]))
@@ -249,6 +255,15 @@ if($value>2)
 			echo "<h3 style='text-align:center'>Q2. ".$error2."</h3>";	
 			echo "<h3 style='text-align:center'>Q3. ".$error3."</h3>";	
 	}
+	
+	if(isset($_POST["email1"])&&$value>2)
+{
+	echo "<br><h2>SUCCESSFUL !</h2>";
+	echo "<a href='front3.php'
+<button type='button' class='btn btn-primary btn-block'>Level 2</button>
+</a>";
+}
+
 	
 	?>
 	
