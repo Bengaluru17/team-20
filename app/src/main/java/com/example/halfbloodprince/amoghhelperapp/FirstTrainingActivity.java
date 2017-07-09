@@ -32,6 +32,8 @@ public class FirstTrainingActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         Constants.setScore(0);
+        Constants.setCorrect(0);
+        Constants.setIncorrect(0);
         okButton1 = (Button) findViewById(R.id.qOKButton1);
         qResult1 = (TextView) findViewById(R.id.qResult1);
         qLabel1 = (TextView) findViewById(R.id.qLabel1);
@@ -54,6 +56,7 @@ public class FirstTrainingActivity extends AppCompatActivity
                 if(count>=3){
                     qResult1.setVisibility(View.VISIBLE);
                     Constants.increaseScore(50);
+                    Constants.increaseCorrect();
                     scoreButton.setText("Score: "+Constants.getScore());
                     startActivity(new Intent(FirstTrainingActivity.this,SecondTrainingActivity.class));
 

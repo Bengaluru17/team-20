@@ -91,6 +91,7 @@ public class ThirdTrainingActivity extends AppCompatActivity
                     qNextButton3.setClickable(true);
                     qNextButton3.setEnabled(true);
                     Constants.increaseScore(50);
+                    Constants.increaseCorrect();
                 }
                 else{
                     qResult3.setVisibility(View.VISIBLE);
@@ -100,6 +101,7 @@ public class ThirdTrainingActivity extends AppCompatActivity
                     qNextButton3.setClickable(false);
                     qNextButton3.setEnabled(false);
                     Constants.decreaseScore(10);
+                    Constants.increaseIncorrect();
                 }
                 scoreButton3.setText("Score: "+Constants.getScore());
             }

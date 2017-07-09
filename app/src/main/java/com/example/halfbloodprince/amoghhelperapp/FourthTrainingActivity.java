@@ -86,6 +86,7 @@ public class FourthTrainingActivity extends AppCompatActivity implements DatePic
             qNextButton4.setClickable(true);
             qNextButton4.setEnabled(true);
             Constants.increaseScore(50);
+            Constants.increaseCorrect();
         }
         else {
             qResult4.setVisibility(View.VISIBLE);
@@ -105,6 +106,7 @@ public class FourthTrainingActivity extends AppCompatActivity implements DatePic
             qNextButton4.setClickable(false);
             qNextButton4.setEnabled(false);
             Constants.decreaseScore(10);
+            Constants.increaseIncorrect();
         }
         scoreButton4.setText("Score: "+Constants.getScore());
     }

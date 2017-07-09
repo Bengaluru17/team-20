@@ -61,6 +61,7 @@ public class SecondTrainingActivity extends AppCompatActivity
                     qNextButton2.setClickable(true);
                     qNextButton2.setEnabled(true);
                     Constants.increaseScore(50);
+                    Constants.increaseCorrect();
                 }
                 else {
                     qResult2.setVisibility(View.VISIBLE);
@@ -70,6 +71,7 @@ public class SecondTrainingActivity extends AppCompatActivity
                     qNextButton2.setClickable(false);
                     qNextButton2.setEnabled(false);
                     Constants.decreaseScore(10);
+                    Constants.increaseIncorrect();
                 }
                 scoreButton.setText("Score: "+Constants.getScore());
             }

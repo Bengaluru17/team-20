@@ -68,6 +68,7 @@ public class FifthTrainingActivity extends AppCompatActivity implements TimePick
             public void onClick(View view) {
                 Toast.makeText(FifthTrainingActivity.this, "You have finished the test. Congratulations!", Toast.LENGTH_SHORT).show();
                 Toast.makeText(FifthTrainingActivity.this, "Final Score: "+Constants.getScore(), Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(FifthTrainingActivity.this,ResultActivity.class));
             }
         });
     }
@@ -84,6 +85,7 @@ public class FifthTrainingActivity extends AppCompatActivity implements TimePick
             qNextButton5.setClickable(true);
             qNextButton5.setEnabled(true);
             Constants.increaseScore(50);
+            Constants.increaseCorrect();
         }
         else{
             qResult5.setVisibility(View.VISIBLE);
@@ -93,6 +95,7 @@ public class FifthTrainingActivity extends AppCompatActivity implements TimePick
             qNextButton5.setClickable(false);
             qNextButton5.setEnabled(false);
             Constants.decreaseScore(10);
+            Constants.increaseIncorrect();
         }
         scoreButton5.setText("Score: "+Constants.getScore());
     }
