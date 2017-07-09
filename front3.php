@@ -31,7 +31,6 @@ nav {
 <div class="col-md-offset-1 col-md-3">
 <?php
 session_start();
-$_SESSION["name"]=$_GET["name"];
 echo "<h2> Welcome <br>".$_SESSION["name"]."</h2>";
 ?>
 <ul class="pagination">
@@ -50,7 +49,7 @@ echo "<h3>".$arr[$random_keys]."</h3>";
 
 ?>
 	<article>
-    <h2 style="text-align:center;">Test 2</h2>
+    <h2 style="text-align:center;">Level 2</h2>
 		<form method="post" action=front3.php>
   <input type="radio" name="gender" value="male" > Male<br>
   <input type="radio" name="gender" value="female"> Female<br>
@@ -58,9 +57,9 @@ echo "<h3>".$arr[$random_keys]."</h3>";
   <input type="submit" name="submit" value="Submit">
   
 </form> 
-<form action=front4.php>
-<button type="button" class="btn btn-primary btn-block">Test 3</button>
-</form>
+<a href="front4.php">
+<button type="button" class="btn btn-primary btn-block">Level 3</button>
+</a>
 <?php
 
 if(isset($_POST["gender"])){
