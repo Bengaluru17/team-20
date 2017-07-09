@@ -29,7 +29,7 @@ nav {
           
 </div>
 <div class="row">
-<div class="col-md-offset-1 col-md-3">
+<div class="col-md-3" style="text-align:center">
 <?php
 
 $servername = "localhost";
@@ -55,13 +55,12 @@ session_start();
 echo "<h2> Welcome <br>".$_SESSION["name"]."</h2>";
 
 ?>
-<ul class="pagination">
-    <li><a href="#">Test 1</a></li>
-  </ul>
+<br><br>
+<iframe width="300" height="300" src="https://www.youtube.com/embed/TAP9RklNPtc?ecver=1" frameborder="0" allowfullscreen></iframe>
 </div>
 
 
-<div class="col-md-offset-1 col-md-4">
+<div class="col-md-6" style="border-left: 1px solid  #f4511e;border-right: 1px solid  #f4511e; padding-left:20px">
 
 	<article>
     <h2 style="text-align:center;">Level 2</h2>
@@ -72,8 +71,8 @@ echo "<h2> Welcome <br>".$_SESSION["name"]."</h2>";
 			$arr=array("male", "female", "other");
 
 			$random_keys=array_rand($arr,1);
-			echo "<h2>Select right button</h2>";
-			echo "<h3>".$arr[$random_keys]."</h3>";
+			echo "<h4>Select right button</h4>";
+			echo "<h2 style='text-align:center;background-color:#f4511e;color:white;margin-right:150px;margin-left:150px'>".$arr[$random_keys]."</h2>";
 
 		?>
 		<div class="radio">
@@ -86,14 +85,14 @@ echo "<h2> Welcome <br>".$_SESSION["name"]."</h2>";
 			<label><input type="radio" name="gender" value="other">Other</label>
 		</div>
 		</div>
-
+		<br><br>
 		<div>
 		<?php
 			$arr2=array("Green", "yellow", "red");
 
 			$random_keys2=array_rand($arr2,1);
-			echo "<h2>Select right button</h2>";
-			echo "<h3>".$arr2[$random_keys2]."</h3>";
+			echo "<h4>Select right button</h4>";
+			echo "<h2 style='text-align:center;background-color:#f4511e;color:white;margin-right:150px;margin-left:150px'>".$arr2[$random_keys2]."</h2>";
 
 		?>
 		<div class="radio">
@@ -103,17 +102,17 @@ echo "<h2> Welcome <br>".$_SESSION["name"]."</h2>";
 			<label><input type="radio" name="color" value="yellow">Yellow</label>
 		</div>
 			<div class="radio">
-			<label><input type="radio" name="color" value="red">Yellow</label>
+			<label><input type="radio" name="color" value="red">red</label>
 		</div>
 		</div>
-		
+		<br><br>
 		<div>
 		<?php
 			$arr3=array("male", "female", "other");
 
 			$random_keys3=array_rand($arr3,1);
-			echo "<h2>Select right button</h2>";
-			echo "<h3>".$arr3[$random_keys3]."</h3>";
+			echo "<h4>Select right button</h4>";
+			echo "<h2 style='text-align:center;background-color:#f4511e;color:white;margin-right:150px;margin-left:150px'>".$arr3[$random_keys3]."</h2>";
 
 		?>
 		<div class="radio">
@@ -127,7 +126,7 @@ echo "<h2> Welcome <br>".$_SESSION["name"]."</h2>";
 		</div>
 		</div>
 			
-			<input type="submit" name="submit" value="Submit">
+			<button type="submit" class='btn btn-primary btn-block' >Submit</button>
   
 		</form> 
 
@@ -183,11 +182,7 @@ $_SESSION["rad3"]=$arr3[$random_keys3];
 ?>
 
 	</article>
-<?php
-echo "<a href='front4.php'
-<button type='button' class='btn btn-primary btn-block'>Level 3</button>
-</a>";
-?>
+
 </div>
 <div class="col-md-3">
 	<h2 style="color:red; text-align:center">STATUS</h2>
@@ -196,6 +191,14 @@ echo "<a href='front4.php'
 		{	echo "<h3 style='text-align:center'>".$error."</h3>";
 			echo "<h3 style='text-align:center'>".$error2."</h3>";
 			echo "<h3 style='text-align:center'>".$error3."</h3>";}
+			
+		if(isset($_POST["gender"])&&$count>2)
+		{
+			echo "<br><h2>SUCCESSFUL !</h2>";
+			echo "<a href='front4.php'
+			<button type='button' class='btn btn-primary btn-block'>Level 3</button>
+			</a>";
+		}
 	
 	?>
 </div>
