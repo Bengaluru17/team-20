@@ -17,6 +17,7 @@
         android:drawablePadding="5dp"
         android:textColor="@color/colorGreen"
         android:textStyle="bold"
+        android:textSize="22sp"
         android:visibility="invisible"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
@@ -35,7 +36,7 @@
         android:text="@string/ok_three_times"
         android:layout_centerHorizontal="true"
         android:id="@+id/qLabel1"
-        android:textSize="17sp"
+        android:textSize="22sp"
         android:textColor="@color/colorPrimary"
         android:textStyle="italic"
         android:layout_above="@id/qOKButton1"
@@ -48,7 +49,7 @@
         android:layout_marginRight="50dp"
         android:layout_marginTop="50dp"
         android:text="Score: --"
+        android:textSize="22sp"
         android:id="@+id/scoreButton"
         />
-
 </RelativeLayout>

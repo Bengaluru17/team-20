@@ -71,6 +71,7 @@ public class FourthTrainingActivity extends AppCompatActivity implements DatePic
         });
     }
 
+
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
          String finalDate=new StringBuilder().append(dayOfMonth).append("/")
@@ -88,14 +89,19 @@ public class FourthTrainingActivity extends AppCompatActivity implements DatePic
         }
         else {
             qResult4.setVisibility(View.VISIBLE);
-            qResult4.setTextColor(getResources().getColor(R.color.colorRed));
             qResult4.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_close_black_24dp,0,0,0);
-            if(year!=chosenYear)
+            if(year!=chosenYear) {
                 qResult4.setText("Incorrect year chosen!");
-            else if(month+1!=chosenMonth)
+                qResult4.setTextColor(getResources().getColor(R.color.colorYellow));
+            }
+            else if(month+1!=chosenMonth) {
                 qResult4.setText("Incorrect month chosen!");
-            else
-                qResult4.setText("Incorrect date chosen");
+                qResult4.setTextColor(getResources().getColor(R.color.colorYellow));
+            }
+            else {
+                qResult4.setText("Incorrect date chosen!");
+                qResult4.setTextColor(getResources().getColor(R.color.colorRed));
+            }
             qNextButton4.setClickable(false);
             qNextButton4.setEnabled(false);
             Constants.decreaseScore(10);

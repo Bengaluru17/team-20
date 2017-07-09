@@ -38,6 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/qResult3"
+        android:textSize="22sp"
         android:drawablePadding="5dp"
         android:textStyle="bold"
         android:visibility="invisible"
@@ -96,6 +97,7 @@
         android:layout_marginRight="60dp"
         android:layout_marginTop="60dp"
         android:text="Score: --"
+        android:textSize="22sp"
         android:id="@+id/scoreButton3"
         />
 
