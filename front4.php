@@ -42,7 +42,7 @@ echo "<h2> Welcome <br>Vaibhav Khandelwal</h2>";
 </div>
 
 <div class="col-md-4" style="border-left: 1px solid  #f4511e; padding-left:20px">
-	<h2>Session 3</h2>
+	<h2>Level 3</h2>
 	<h3>Select state <span style="color:red">Rajasthan</span></h3>
 	<article>
 	<form action="front4.php" method="POST">	
@@ -58,6 +58,10 @@ echo "<h2> Welcome <br>Vaibhav Khandelwal</h2>";
 		<input type="submit">
 	</form>	
 	</article>
+	
+	<a href="front5.php">
+<button type="button" class="btn btn-primary btn-block">Level 4</button>
+</a>
 </div>
 
 <div class="col-md-3">
@@ -82,3 +86,5 @@ echo "<h2> Welcome <br>Vaibhav Khandelwal</h2>";
 	
 	?>
 </div>
+</body>
+</html>
