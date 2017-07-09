@@ -30,7 +30,27 @@ nav {
           
 </div>
 <div class="row">
-<div class="col-md-offset-1 col-md-3">
+<div class="col-md-3" style="text-align:center">
+<?php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database="cfg";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password,$database);
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+	}
+
+$t=time();
+$sql="UPDATE levels SET level4=$t WHERE id=1";
+mysqli_query($conn, $sql);
+
+?>
 <?php
 session_start();
 
@@ -41,7 +61,7 @@ echo "<h2> Welcome <br>Vaibhav Khandelwal</h2>";
 ?>
 </div>
 
-<div class="col-md-4" style="border-left: 1px solid  #f4511e; padding-left:20px">
+<div class="col-md-6" style="border-left: 1px solid  #f4511e;border-right: 1px solid  #f4511e; padding-left:20px">
 	<h2>Level 4</h2>
 	<h3>Select date <span style="color:red">9/7/2017</span></h3>
 <form action="front5.php" method="POST">
@@ -50,12 +70,8 @@ echo "<h2> Welcome <br>Vaibhav Khandelwal</h2>";
       <input type="date" class="form-control" id="dat" name="date">
     </div>
   
-	<button type="submit" class="btn btn-default">Submit</button>
+	<button type="submit" class='btn btn-primary btn-block' >Submit</button>
 </form>
-
-	<a href="front6.php">
-<button type="button" class="btn btn-primary btn-block">Level 5</button>
-</a>
 </div>
 
 <div class="col-md-3">
@@ -65,7 +81,7 @@ echo "<h2> Welcome <br>Vaibhav Khandelwal</h2>";
 	if(isset($_POST["date"]))
 	{$dob=explode("-", $_POST["date"]);
 	$do=explode("-",$date);
-	
+	$value=0;
 	if($do[0]!=$dob[0])
 		{
 			echo "<span style='color:blue;text-align:center'><h3>Year is wrong</h3></span>";
@@ -80,7 +96,15 @@ echo "<h2> Welcome <br>Vaibhav Khandelwal</h2>";
 		}
 		else
 		{
-			echo "<span style='color:green;text-align:center'><h3>Matched</h3></span>";
+			echo "<span style='color:green;text-align:center'><h3>Matched</h3></span>"; $value=1;
 		}
-	} 	
+	}
+
+		if(isset($_POST["date"])&&$value==1)
+		{
+			echo "<br><h2>SUCCESSFUL !</h2>";
+			echo "<a href='front6.php'
+			<button type='button' class='btn btn-primary btn-block'>Level 5</button>
+			</a>";
+		}	
 	?>
